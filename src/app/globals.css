@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-roboto), 'Roboto', sans-serif;
+
+  /* ── Brand Navigation ── */
+  --color-brand-crimson: #e11d48;
+  --color-brand-crimson-dark: #9f1239;
+  --color-brand-gray-bg: #f1f5f9;
+
+  /* ── From 11.png: Primary Swatches ── */
+  --color-accent-red: #e11d48;
+  --color-accent-gold: #b8860b;
+  --color-heading-red: #be123c;
+  --color-primary-text-grey: #334155;
+  --color-primary-chart-color: #4d6c7a;
+  --color-grey: #64748b;
+
+  /* ── Status Colors ── */
+  --color-positive-green: #16a34a;
+  --color-negative-red: #dc2626;
+  --color-neutral-blue: #2563eb;
+
+  /* ── Structural / Fill ── */
+  --color-section-background: #f8fafc;
+  --color-chip-fill: #f1f5f9;
+  --color-outline: #cbd5e1;
+  --color-button-outline: #e2e8f0;
+  --color-brand-border: #e2e8f0;
+
+  /* ── Stroke & Fill Variants ── */
+  --color-green-stroke: #16a34a;
+  --color-green-fill: #dcfce7;
+  --color-blue-stroke: #2563eb;
+  --color-blue-fill: #dbeafe;
+  --color-red-stroke: #dc2626;
+  --color-red-fill: #fee2e2;
+
+  /* ── Heat Map ── */
+  --color-heat-4: #e11d48;
+  --color-heat-3: #fb7185;
+  --color-heat-2: #fda4af;
+  --color-heat-1: #ffe4e6;
+
+  /* ── Legacy aliases ── */
+  --color-brand-green: #22c55e;
+  --color-brand-green-bg: #dcfce7;
+  --color-brand-red: #ef4444;
+  --color-brand-red-bg: #fee2e2;
+  --color-brand-blue: #3b82f6;
+  --color-brand-blue-bg: #dbeafe;
+}
+
+/* ── Base ── */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* ── Micro-animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn  { animation: fadeIn  150ms ease-out both; }
+.animate-slideDown { animation: slideDown 180ms ease-out both; }
+.animate-scaleIn { animation: scaleIn 150ms ease-out both; }
+
+/* ── Custom Scrollbar (attribute matrix) ── */
+.custom-scroll::-webkit-scrollbar        { height: 4px; width: 4px; }
+.custom-scroll::-webkit-scrollbar-track  { background: #f1f5f9; border-radius: 999px; }
+.custom-scroll::-webkit-scrollbar-thumb  { background: #cbd5e1; border-radius: 999px; }
+.custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
