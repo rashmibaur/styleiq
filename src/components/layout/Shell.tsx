@@ -26,7 +26,6 @@ export default function Shell({ activeTab, setActiveTab, children }: ShellProps)
 
         {/* Navigation Tabs */}
         <nav className="flex items-center gap-1" aria-label="Main navigation">
-          {/* ACTIVE: Trend Intelligence */}
           <button
             id="nav-tab-trend"
             onClick={() => setActiveTab('trend')}
@@ -41,25 +40,29 @@ export default function Shell({ activeTab, setActiveTab, children }: ShellProps)
             <span>Trend Intelligence</span>
           </button>
 
-          {/* DISABLED: New Product Intelligence */}
           <button
             id="nav-tab-new-product"
-            disabled
-            aria-disabled="true"
-            title="Coming soon"
-            className="flex items-center gap-1.5 px-4 py-2 text-[11px] font-bold uppercase tracking-wider rounded-md opacity-45 cursor-not-allowed text-slate-500"
+            onClick={() => setActiveTab('new-product')}
+            aria-current={activeTab === 'new-product' ? 'page' : undefined}
+            className={`flex items-center gap-1.5 px-4 py-2 text-[11px] font-bold uppercase tracking-wider rounded-md transition-all duration-200 cursor-pointer ${
+              activeTab === 'new-product'
+                ? 'bg-brand-crimson text-white shadow-sm'
+                : 'text-slate-500 hover:bg-slate-100 hover:text-slate-800'
+            }`}
           >
             <Sparkles size={13} />
             <span>New Product Intelligence</span>
           </button>
 
-          {/* DISABLED: Launch Intelligence */}
           <button
             id="nav-tab-launch"
-            disabled
-            aria-disabled="true"
-            title="Coming soon"
-            className="flex items-center gap-1.5 px-4 py-2 text-[11px] font-bold uppercase tracking-wider rounded-md opacity-45 cursor-not-allowed text-slate-500"
+            onClick={() => setActiveTab('launch')}
+            aria-current={activeTab === 'launch' ? 'page' : undefined}
+            className={`flex items-center gap-1.5 px-4 py-2 text-[11px] font-bold uppercase tracking-wider rounded-md transition-all duration-200 cursor-pointer ${
+              activeTab === 'launch'
+                ? 'bg-brand-crimson text-white shadow-sm'
+                : 'text-slate-500 hover:bg-slate-100 hover:text-slate-800'
+            }`}
           >
             <Rocket size={13} />
             <span>Launch Intelligence</span>
